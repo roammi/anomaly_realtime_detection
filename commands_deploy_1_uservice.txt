@@ -1,3 +1,7 @@
-docker run -d -p 8080:8080 -v 'type=bind, source="$(pwd)/jupyter", target=/src' anomalyrealtimedetection:latest
+#build
+docker build --pull --rm -f "jupyter\Dockerfile" -t anomalyrealtimedetection:latest "jupyter"
+
+#run doesnt work, runned exposing port 8080 and runned from docker app
+docker run -d -p 8080:8080 -v 'type=bind, source="$(pwd)/jupyter", target=/src' anomalyrealtimedetection:latest 
 
 docker run -d -p 8080:8080 anomalyrealtimedetection:latest
